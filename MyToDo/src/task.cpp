@@ -2,8 +2,7 @@
 
 Task::Task(int id, const QString& title, const QString& description, const QString& date, bool status)
     :m_id(id), m_title(title), m_description(description), m_date(date), m_status(status)
-{
-}
+{}
 
 QString Task::title() const
 {

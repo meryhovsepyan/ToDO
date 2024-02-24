@@ -106,7 +106,7 @@ ApplicationWindow {
                         id: dlg
 
                         width: lv.width
-                        height: 60
+                        height: 70
                         color: "#bbd4f0"
                         radius: 10
 
@@ -143,6 +143,7 @@ ApplicationWindow {
                             radius: 10
                             height: parent.height
                             anchors.right: deleteRec.left
+                            anchors.rightMargin : 5
                             Text {
                                 color : "#0b1624"
                                 font.bold: true
@@ -282,7 +283,6 @@ ApplicationWindow {
                             id:datePicker
                             onClicked: {
                                 t3.text = Qt.formatDate(selectedDate, 'dd-MM-yyyy')
-                                console.log("date----", Qt.formatDate(selectedDate, 'dd-MM-yyyy'))
                                 datePickerPopup.close()
                             }
                         }

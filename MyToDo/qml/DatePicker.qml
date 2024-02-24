@@ -65,10 +65,10 @@ ListView {
                             id: text
                             anchors.centerIn: parent
                             font.pixelSize: 0.5 * parent.height
-                            font.bold:      new Date(year, month, date).toDateString() == new Date().toDateString() // today
+                            font.bold:      new Date(year, month, date).toDateString() == new Date().toDateString()
                             text: {
                                 if(day < 0)                                               ['S', 'M', 'T', 'W', 'T', 'F', 'S'][index]
-                                else if(new Date(year, month, date).getMonth() == month)  date // 1-31
+                                else if(new Date(year, month, date).getMonth() == month)  date
                                 else                                                      ''
                             }
                         }

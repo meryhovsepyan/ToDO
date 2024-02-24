@@ -19,12 +19,6 @@ void DBManager::init()
     QString dbFileName = "tasks.db";
     QString dbFilePath = QDir(QCoreApplication::applicationDirPath()).filePath(dbFileName);
 
-    // QDir projectDir(QCoreApplication::applicationDirPath());
-    // projectDir.cdUp();
-    // QString projectDirPath = projectDir.absolutePath();
-    // QString dbFilePath = projectDirPath.append("/"+dbFileName);
-    // qDebug()<<"qqqq"<<dbFilePath;
-
     if (m_db.isOpen()) {
         m_db.close();
         QSqlDatabase::removeDatabase(m_db.connectionName());

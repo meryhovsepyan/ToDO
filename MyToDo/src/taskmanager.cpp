@@ -8,7 +8,6 @@ TaskManager::TaskManager(QObject *parent)
 
 void TaskManager::addTask(const QString &title,const QString &description,const QString &date,bool status) {
     beginInsertRows(QModelIndex(), rowCount(QModelIndex()), rowCount(QModelIndex()));
-    qDebug()<<"date"<< date;;
     int id = m_dbManager->insertTask(title, description, date, status);
     Task t(id,title, description,date,status);
     m_tasks.append(t);
@@ -70,7 +69,6 @@ QVariant TaskManager::data(const QModelIndex &index, int role) const {
 bool TaskManager::setData(const QModelIndex &index, const QVariant &value, int role) {
     qDebug() << "setData " << index.row() << role << value ;
     Task &task  = m_tasks[index.row()];
-    qDebug() <<"Task description"<< task.description();
     switch (role) {
     case Roles::Title:
         task.setTitle(value.toString());
